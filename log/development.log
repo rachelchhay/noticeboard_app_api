@@ -497,3 +497,19 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/notices" for 127.0.0.1 at 2017-09-05 15:05:22 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by NoticesController#index as HTML
+  [1m[36mNotice Load (0.7ms)[0m  [1m[34mSELECT "notices".* FROM "notices"[0m
+Completed 200 OK in 37ms (Views: 30.4ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/notices" for 127.0.0.1 at 2017-09-05 15:05:42 -0500
+Processing by NoticesController#create as HTML
+  Parameters: {"author"=>"Create new post", "title"=>"sdjflskdj", "content"=>"skdljflsd", "notice"=>{"title"=>"sdjflskdj", "author"=>"Create new post", "content"=>"skdljflsd"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "notices" ("title", "author", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "sdjflskdj"], ["author", "Create new post"], ["content", "skdljflsd"], ["created_at", "2017-09-05 20:05:42.188394"], ["updated_at", "2017-09-05 20:05:42.188394"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 15ms (Views: 0.7ms | ActiveRecord: 6.8ms)
+
+
